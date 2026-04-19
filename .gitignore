@@ -11,3 +11,7 @@ wheels/
 
 # Environment variables and secrets
 .env
+src/app/keys
+src/app/configs/vault_log.txt
+src/app/configs/user_db.json
+

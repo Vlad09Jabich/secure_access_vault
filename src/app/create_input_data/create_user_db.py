@@ -1,6 +1,6 @@
 import random
 import json
-from typing import Any
+from typing import TypedDict
 from pathlib import Path
 
 ENCODING = 'utf-8'
@@ -9,25 +9,31 @@ FILE_NAME = Path('user_db.json')
 ALL_PATH = Path(FOLDER_PATH) / FILE_NAME
 
 USERS = ['vlad', 'Sally', 'BOB', 'qwerty', 'Jon', '1234', 'Zeus', 'Apocriton', 'Arch']
-FIRST_ID = 1
-
-def create_user_info(user_name: str, id: int) -> dict[str, any]:
-    user_ifo = {}
-    user_ifo['id'] = id
-    user_ifo['user'] = user_name
-    user_ifo['access_level'] = random.randint(1, 10)
-    user_ifo['is_active'] = random.choice([True, False])
-    db.append(user_ifo)
+FIRST_UID = 1
 
 
-db = []
-id = FIRST_ID
+class UserInfo(TypedDict):
+    uid: int
+    user: str
+    access_level: int
+    is_active: bool
 
+
+def create_user_info(user_name: str, uid: int) -> UserInfo:
+    return {
+        'uid': uid,
+        'user': user_name,
+        'access_level': random.randint(1, 10),
+        'is_active': random.choice([True, False])
+    }
+
+
+db: list[UserInfo] = []
+uid = FIRST_UID
 for user in USERS:
-    create_user_info(user, id)
-    id += 1
+    new_user = create_user_info(user, uid)
+    db.append(new_user)
+    uid += 1
 
 with open(ALL_PATH, 'w', encoding=ENCODING) as f:
     json.dump(db, f, indent=4)
-
-print(db)

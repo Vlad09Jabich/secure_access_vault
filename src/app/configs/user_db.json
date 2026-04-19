@@ -1,56 +1,56 @@
 [
     {
-        "id": 1,
+        "uid": 1,
         "user": "vlad",
-        "access_level": 3,
-        "is_active": true
-    },
-    {
-        "id": 2,
-        "user": "Sally",
         "access_level": 3,
         "is_active": false
     },
     {
-        "id": 3,
-        "user": "BOB",
-        "access_level": 9,
-        "is_active": true
-    },
-    {
-        "id": 4,
-        "user": "qwerty",
+        "uid": 2,
+        "user": "Sally",
         "access_level": 4,
+        "is_active": false
+    },
+    {
+        "uid": 3,
+        "us": "BOB",
+        "access_level": 1,
         "is_active": true
     },
     {
-        "id": 5,
+        "uid": 4,
+        "user": "qwerty",
+        "access_level": null,
+        "is_active": true
+    },
+    {
+        "uid": 5,
         "user": "Jon",
         "access_level": 9,
         "is_active": true
     },
     {
-        "id": 6,
+        "uid": 6,
         "user": "1234",
-        "access_level": 7,
+        "access_level": 5,
         "is_active": true
     },
     {
-        "id": 7,
+        "uid": 7,
         "user": "Zeus",
-        "access_level": 7,
+        "access_level": 2,
         "is_active": true
     },
     {
-        "id": 8,
+        "uid": 8,
         "user": "Apocriton",
-        "access_level": 1,
+        "access_level": 2,
         "is_active": true
     },
     {
-        "id": 9,
+        "uid": 9,
         "user": "Arch",
-        "access_level": 3,
-        "is_active": false
+        "access_level": 5,
+        "is_active": true
     }
 ]
